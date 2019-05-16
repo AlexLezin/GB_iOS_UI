@@ -13,6 +13,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var LoginTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBAction func LoginButton(_ sender: Any) {
+        if LoginTextField.text == "admin",
+            PasswordTextField.text == "qwerty" {
+            print("successful login")
+        }
     }
     
     

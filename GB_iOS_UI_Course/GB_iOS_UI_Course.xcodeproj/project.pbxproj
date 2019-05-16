@@ -12,6 +12,7 @@
 		76AA1FF3228B3D90000086E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76AA1FF2228B3D90000086E4 /* Assets.xcassets */; };
 		76AA1FF6228B3D90000086E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AA1FF4228B3D90000086E4 /* LaunchScreen.storyboard */; };
 		76AA1FFE228BDD08000086E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA1FFD228BDD08000086E4 /* LoginViewController.swift */; };
+		76AA2000228DDE5C000086E4 /* LoginnScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA1FFF228DDE5C000086E4 /* LoginnScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		76AA1FF5228B3D90000086E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76AA1FF7228B3D90000086E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76AA1FFD228BDD08000086E4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		76AA1FFF228DDE5C000086E4 /* LoginnScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginnScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				76AA1FF4228B3D90000086E4 /* LaunchScreen.storyboard */,
 				76AA1FF7228B3D90000086E4 /* Info.plist */,
 				76AA1FFD228BDD08000086E4 /* LoginViewController.swift */,
+				76AA1FFF228DDE5C000086E4 /* LoginnScrollView.swift */,
 			);
 			path = GB_iOS_UI_Course;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76AA1FFE228BDD08000086E4 /* LoginViewController.swift in Sources */,
+				76AA2000228DDE5C000086E4 /* LoginnScrollView.swift in Sources */,
 				76AA1FEC228B3D8E000086E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
