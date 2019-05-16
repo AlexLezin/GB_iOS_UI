@@ -97,6 +97,7 @@
                     <connections>
                         <outlet property="LoginTextField" destination="Q3F-fR-3wx" id="5pW-YC-ZNf"/>
                         <outlet property="PasswordTextField" destination="Qi8-7V-GeT" id="Kha-nT-KWF"/>
+                        <outlet property="ScrollView" destination="6zP-7l-v4c" id="iSo-ol-GLO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
