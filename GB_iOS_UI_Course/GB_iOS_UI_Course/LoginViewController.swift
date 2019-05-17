@@ -32,6 +32,8 @@ class LoginViewController: UIViewController {
         ScrollView?.addGestureRecognizer(hideKeyboardGesture)
     }
     
+    
+    
     // Когда клавиатура появляется
     @objc func keyboardWasShown(notification: Notification) {
         
