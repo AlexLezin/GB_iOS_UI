@@ -33,7 +33,6 @@ class LoginViewController: UIViewController {
     }
     
     
-    
     // Когда клавиатура появляется
     @objc func keyboardWasShown(notification: Notification) {
         
