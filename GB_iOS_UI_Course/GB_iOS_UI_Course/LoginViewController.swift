@@ -25,8 +25,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // жест нажатия
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        // присваиваем его UIScrollVIew
+        ScrollView?.addGestureRecognizer(hideKeyboardGesture)
     }
     
     // Когда клавиатура появляется
@@ -65,5 +68,11 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+
+    @objc func hideKeyboard() {
+        self.ScrollView?.endEditing(true)
+    }
+
+    
 
 }
