@@ -10,12 +10,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-//MARK: - Outlets
+    //MARK: - Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-//MARK: - Actions
+    //MARK: - Actions
     @IBAction func loginButton(_ sender: Any) {
         if loginTextField.text == "admin",
             passwordTextField.text == "qwerty" {
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-//MARK: - Life Cycle
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +31,27 @@ class LoginViewController: UIViewController {
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         // присваиваем его UIScrollVIew
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Подписываемся на два уведомления: одно приходит при появлении клавиатуры
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
+        // Второе -- когда она пропадает
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    //MARK: - Keyboard Resize
+    @objc func hideKeyboard() {
+        self.scrollView?.endEditing(true)
     }
     
     // Когда клавиатура появляется
@@ -52,25 +73,5 @@ class LoginViewController: UIViewController {
         let contentInsets = UIEdgeInsets.zero
         scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Подписываемся на два уведомления: одно приходит при появлении клавиатуры
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
-        // Второе -- когда она пропадает
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    @objc func hideKeyboard() {
-        self.scrollView?.endEditing(true)
     }
 }
