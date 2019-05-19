@@ -10,28 +10,28 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+//MARK: - Outlets
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var ScrollView: UIScrollView!
-    @IBOutlet weak var LoginTextField: UITextField!
-    @IBOutlet weak var PasswordTextField: UITextField!
-    @IBAction func LoginButton(_ sender: Any) {
-        if LoginTextField.text == "admin",
-            PasswordTextField.text == "qwerty" {
+//MARK: - Actions
+    @IBAction func loginButton(_ sender: Any) {
+        if loginTextField.text == "admin",
+            passwordTextField.text == "qwerty" {
             print("successful login")
         }
     }
     
-    
-    
+//MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // жест нажатия
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         // присваиваем его UIScrollVIew
-        ScrollView?.addGestureRecognizer(hideKeyboardGesture)
+        scrollView?.addGestureRecognizer(hideKeyboardGesture)
     }
-    
     
     // Когда клавиатура появляется
     @objc func keyboardWasShown(notification: Notification) {
@@ -42,16 +42,16 @@ class LoginViewController: UIViewController {
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
         
         // Добавляем отступ внизу UIScrollView, равный размеру клавиатуры
-        self.ScrollView?.contentInset = contentInsets
-        ScrollView?.scrollIndicatorInsets = contentInsets
+        self.scrollView?.contentInset = contentInsets
+        scrollView?.scrollIndicatorInsets = contentInsets
     }
     
     //Когда клавиатура исчезает
     @objc func keyboardWillBeHidden(notification: Notification) {
         // Устанавливаем отступ внизу UIScrollView, равный 0
         let contentInsets = UIEdgeInsets.zero
-        ScrollView?.contentInset = contentInsets
-        ScrollView?.scrollIndicatorInsets = contentInsets
+        scrollView?.contentInset = contentInsets
+        scrollView?.scrollIndicatorInsets = contentInsets
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -71,9 +71,6 @@ class LoginViewController: UIViewController {
     }
 
     @objc func hideKeyboard() {
-        self.ScrollView?.endEditing(true)
+        self.scrollView?.endEditing(true)
     }
-
-    
-
 }
