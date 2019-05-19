@@ -23,6 +23,26 @@ class LoginViewController: UIViewController {
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let login = loginTextField.text!
+        let password = passwordTextField.text!
+        
+        if login == "admin" && password == "qwerty" {
+            return true
+        } else {
+            // Создаем контроллер
+            let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
+            // Создаем кнопку для UIAlertController
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            // Добавляем кнопку на UIAlertController
+            alert.addAction(action)
+            // Показываем UIAlertController
+            present(alert, animated: true, completion: nil)
+            
+            return false
+        }
+    }
+
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
