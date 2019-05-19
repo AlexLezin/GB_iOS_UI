@@ -15,14 +15,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    //MARK: - Actions
-    @IBAction func loginButton(_ sender: Any) {
-        if loginTextField.text == "admin",
-            passwordTextField.text == "qwerty" {
-            print("successful login")
-        }
-    }
-    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         let login = loginTextField.text!
         let password = passwordTextField.text!
