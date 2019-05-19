@@ -8,80 +8,97 @@
 
 import UIKit
 
+// MARK: - Globals
+let log = "ad min"
+let pass = "123qwe"
+
 class LoginViewController: UIViewController {
 
-    //MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // MARK: - Login
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        let login = loginTextField.text!
-        let password = passwordTextField.text!
+        let checkUser = cerberus()
         
-        if login == "admin" && password == "qwerty" {
-            return true
-        } else {
-            // Создаем контроллер
-            let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
-            // Создаем кнопку для UIAlertController
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            // Добавляем кнопку на UIAlertController
-            alert.addAction(action)
-            // Показываем UIAlertController
-            present(alert, animated: true, completion: nil)
-            
-            return false
+        if !checkUser {
+            loginErrorAlarm()
         }
+        return checkUser
+    }
+        
+    func cerberus() -> Bool {
+            guard let login = loginTextField.text,
+                let password = passwordTextField.text else { return false }
+            
+            if login == log && password == pass {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+    func loginErrorAlarm() {
+            // Declaring controller
+            let alert = UIAlertController(title: "Error", message: "Wrong user data", preferredStyle: .alert)
+            // Declaring button for UIAlertController
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            // Add button on UIAlertController
+            alert.addAction(action)
+            // Show UIAlertController
+            present(alert, animated: true, completion: nil)
     }
 
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // жест нажатия
+        // Tap gesture
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        // присваиваем его UIScrollVIew
+        // Add gesture to UIScrollVIew
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Подписываемся на два уведомления: одно приходит при появлении клавиатуры
+        // Subscribing to notification: keyboard is shown
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
-        // Второе -- когда она пропадает
+        // Subscribing to notification: keyboard is hidden
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        // Removing observers
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-    //MARK: - Keyboard Resize
+    // MARK: - Keyboard Resize
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }
     
-    // Когда клавиатура появляется
+    // When keyboard is about to be shown
     @objc func keyboardWasShown(notification: Notification) {
         
-        // Получаем размер клавиатуры
+        // Get keyboard size
         let info = notification.userInfo! as NSDictionary
         let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
         
-        // Добавляем отступ внизу UIScrollView, равный размеру клавиатуры
+        // Adding indent from bottom of UIScrollView, equal to keyboard size
         self.scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets
     }
     
-    //Когда клавиатура исчезает
+    // When keyboard is about to be hidden
     @objc func keyboardWillBeHidden(notification: Notification) {
-        // Устанавливаем отступ внизу UIScrollView, равный 0
+        
+        // Adding indent from bottom of UIScrollView, equal zero
         let contentInsets = UIEdgeInsets.zero
         scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets

@@ -55,13 +55,13 @@
 			isa = PBXGroup;
 			children = (
 				76AA1FEF228B3D8E000086E4 /* Main.storyboard */,
+				76AA1FF4228B3D90000086E4 /* LaunchScreen.storyboard */,
 				76AA20052291902A000086E4 /* Auxiliary */,
-				76AA200422918F84000086E4 /* Groups Screen */,
+				76AA200422918F84000086E4 /* Classes Screen */,
 				76AA200322918F78000086E4 /* Fellows Screen */,
 				76AA200122918E87000086E4 /* Login Screen */,
 				76AA1FEB228B3D8E000086E4 /* AppDelegate.swift */,
 				76AA1FF2228B3D90000086E4 /* Assets.xcassets */,
-				76AA1FF4228B3D90000086E4 /* LaunchScreen.storyboard */,
 				76AA1FF7228B3D90000086E4 /* Info.plist */,
 			);
 			path = GB_iOS_UI_Course;
@@ -82,11 +82,11 @@
 			path = "Fellows Screen";
 			sourceTree = "<group>";
 		};
-		76AA200422918F84000086E4 /* Groups Screen */ = {
+		76AA200422918F84000086E4 /* Classes Screen */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "Groups Screen";
+			path = "Classes Screen";
 			sourceTree = "<group>";
 		};
 		76AA20052291902A000086E4 /* Auxiliary */ = {
