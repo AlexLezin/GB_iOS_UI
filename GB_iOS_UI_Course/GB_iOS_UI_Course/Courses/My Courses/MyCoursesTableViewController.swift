@@ -1,5 +1,5 @@
 //
-//  AllCoursesTableViewController.swift
+//  MyCoursesTableViewController.swift
 //  GB_iOS_UI_Course
 //
 //  Created by Alexander Lezin on 23/05/2019.
@@ -8,17 +8,22 @@
 
 import UIKit
 
-class AllCoursesTableViewController: UITableViewController {
+class MyCoursesTableViewController: UITableViewController {
 
-    var courses = [
-        "iOS",
-        "Android",
-        "Java",
-        "Python",
-        "PHP",
-        "Kotlin",
-        "Web Design",
-    ]
+    var courses = [String]()
+    
+    @IBAction func addCourse(segue: UIStoryboardSegue) {
+        if segue.identifier == "addCourse" {
+            guard let allCoursesTableViewController = segue.source as? AllCoursesTableViewController else { return }
+            if let indexPath = allCoursesTableViewController.tableView.indexPathForSelectedRow {
+                let course = allCoursesTableViewController.courses[indexPath.row]
+                if !courses.contains(course) {
+                    courses.append(course)
+                    tableView.reloadData()
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +48,9 @@ class AllCoursesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         // Getting a cell from the pool
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath) as! AllCoursesTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCourseCell", for: indexPath) as! MyCoursesTableViewCell
         // Getting certain course title
         let course = courses[indexPath.row]
         
@@ -63,17 +68,12 @@ class AllCoursesTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            courses.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.

@@ -1,5 +1,5 @@
 //
-//  AllCoursesTableViewCell.swift
+//  MyCoursesTableViewCell.swift
 //  GB_iOS_UI_Course
 //
 //  Created by Alexander Lezin on 23/05/2019.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class AllCoursesTableViewCell: UITableViewCell {
+class MyCoursesTableViewCell: UITableViewCell {
 
+ 
     @IBOutlet weak var courseLabel: UILabel!
     
     override func awakeFromNib() {
