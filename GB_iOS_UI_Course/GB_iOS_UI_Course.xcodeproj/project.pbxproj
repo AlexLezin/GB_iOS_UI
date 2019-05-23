@@ -16,6 +16,12 @@
 		76B57D7522971AA7002D3662 /* AllCoursesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B57D7422971AA7002D3662 /* AllCoursesTableViewCell.swift */; };
 		76B57D7722972AB6002D3662 /* MyCoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B57D7622972AB6002D3662 /* MyCoursesTableViewController.swift */; };
 		76B57D7922972AC6002D3662 /* MyCoursesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B57D7822972AC6002D3662 /* MyCoursesTableViewCell.swift */; };
+		76B57D7C22973660002D3662 /* MyFellowsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B57D7B22973660002D3662 /* MyFellowsTableViewCell.swift */; };
+		76B57D81229736B0002D3662 /* MyFellowsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B57D80229736B0002D3662 /* MyFellowsTableViewController.swift */; };
+		76B57D85229736E4002D3662 /* BadgesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B57D84229736E4002D3662 /* BadgesCollectionViewController.swift */; };
+		76B57D87229736F4002D3662 /* BadgesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B57D86229736F4002D3662 /* BadgesCollectionViewCell.swift */; };
+		76B57D8922973B37002D3662 /* Fellow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B57D8822973B37002D3662 /* Fellow.swift */; };
+		76B57D8B22973BAF002D3662 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B57D8A22973BAF002D3662 /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		76B57D7422971AA7002D3662 /* AllCoursesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCoursesTableViewCell.swift; sourceTree = "<group>"; };
 		76B57D7622972AB6002D3662 /* MyCoursesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursesTableViewController.swift; sourceTree = "<group>"; };
 		76B57D7822972AC6002D3662 /* MyCoursesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursesTableViewCell.swift; sourceTree = "<group>"; };
+		76B57D7B22973660002D3662 /* MyFellowsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFellowsTableViewCell.swift; sourceTree = "<group>"; };
+		76B57D80229736B0002D3662 /* MyFellowsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFellowsTableViewController.swift; sourceTree = "<group>"; };
+		76B57D84229736E4002D3662 /* BadgesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesCollectionViewController.swift; sourceTree = "<group>"; };
+		76B57D86229736F4002D3662 /* BadgesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesCollectionViewCell.swift; sourceTree = "<group>"; };
+		76B57D8822973B37002D3662 /* Fellow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fellow.swift; sourceTree = "<group>"; };
+		76B57D8A22973BAF002D3662 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +98,8 @@
 		76AA200322918F78000086E4 /* Fellows */ = {
 			isa = PBXGroup;
 			children = (
+				76B57D82229736B8002D3662 /* Badges */,
+				76B57D7A2297363E002D3662 /* My Fellows */,
 			);
 			path = Fellows;
 			sourceTree = "<group>";
@@ -102,6 +116,8 @@
 		76AA20052291902A000086E4 /* Auxiliary */ = {
 			isa = PBXGroup;
 			children = (
+				76B57D8822973B37002D3662 /* Fellow.swift */,
+				76B57D8A22973BAF002D3662 /* Course.swift */,
 			);
 			path = Auxiliary;
 			sourceTree = "<group>";
@@ -122,6 +138,24 @@
 				76B57D7822972AC6002D3662 /* MyCoursesTableViewCell.swift */,
 			);
 			path = "My Courses";
+			sourceTree = "<group>";
+		};
+		76B57D7A2297363E002D3662 /* My Fellows */ = {
+			isa = PBXGroup;
+			children = (
+				76B57D7B22973660002D3662 /* MyFellowsTableViewCell.swift */,
+				76B57D80229736B0002D3662 /* MyFellowsTableViewController.swift */,
+			);
+			path = "My Fellows";
+			sourceTree = "<group>";
+		};
+		76B57D82229736B8002D3662 /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				76B57D84229736E4002D3662 /* BadgesCollectionViewController.swift */,
+				76B57D86229736F4002D3662 /* BadgesCollectionViewCell.swift */,
+			);
+			path = Badges;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,12 +229,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B57D8B22973BAF002D3662 /* Course.swift in Sources */,
 				76B57D7522971AA7002D3662 /* AllCoursesTableViewCell.swift in Sources */,
 				76AA1FFE228BDD08000086E4 /* LoginViewController.swift in Sources */,
 				76B57D7722972AB6002D3662 /* MyCoursesTableViewController.swift in Sources */,
 				76B57D7322971A64002D3662 /* AllCoursesTableViewController.swift in Sources */,
+				76B57D87229736F4002D3662 /* BadgesCollectionViewCell.swift in Sources */,
 				76B57D7922972AC6002D3662 /* MyCoursesTableViewCell.swift in Sources */,
+				76B57D8922973B37002D3662 /* Fellow.swift in Sources */,
 				76AA1FEC228B3D8E000086E4 /* AppDelegate.swift in Sources */,
+				76B57D81229736B0002D3662 /* MyFellowsTableViewController.swift in Sources */,
+				76B57D85229736E4002D3662 /* BadgesCollectionViewController.swift in Sources */,
+				76B57D7C22973660002D3662 /* MyFellowsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
