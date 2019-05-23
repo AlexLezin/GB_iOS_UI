@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - Globals
-let log = "ad min"
+let log = "admin"
 let pass = "123qwe"
 
 class LoginViewController: UIViewController {

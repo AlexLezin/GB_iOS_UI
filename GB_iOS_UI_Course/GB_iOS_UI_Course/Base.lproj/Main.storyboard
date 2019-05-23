@@ -176,7 +176,7 @@
             </objects>
             <point key="canvasLocation" x="4170" y="360"/>
         </scene>
-        <!--My Classes-->
+        <!--My Courses-->
         <scene sceneID="IKV-GV-hzm">
             <objects>
                 <tableViewController id="s33-2C-tDk" sceneMemberID="viewController">
@@ -199,7 +199,7 @@
                             <outlet property="delegate" destination="s33-2C-tDk" id="0xI-71-BfF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Classes" id="flC-Lg-qK9">
+                    <navigationItem key="navigationItem" title="My Courses" id="flC-Lg-qK9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4pT-Aa-wk3">
                             <connections>
                                 <segue destination="nQ3-Tu-RO7" kind="show" id="RXZ-YW-8HV"/>
@@ -211,16 +211,16 @@
             </objects>
             <point key="canvasLocation" x="3196" y="-394"/>
         </scene>
-        <!--All Classes-->
+        <!--All Courses-->
         <scene sceneID="2sX-7g-h33">
             <objects>
-                <tableViewController id="nQ3-Tu-RO7" customClass="AllClassesTableViewController" customModule="GB_iOS_UI_Course" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="nQ3-Tu-RO7" customClass="AllCoursesTableViewController" customModule="GB_iOS_UI_Course" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Md-DN-aLJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rxw-0G-oQc" customClass="AllCitiesTableViewCell" customModule="GB_iOS_UI_Course" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" id="rxw-0G-oQc" customClass="AllCoursesTableViewCell" customModule="GB_iOS_UI_Course" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rxw-0G-oQc" id="wxH-ko-f2K">
@@ -241,7 +241,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="classTitle" destination="wEo-zQ-ldH" id="B1e-eX-wKC"/>
+                                    <outlet property="courseTitle" destination="wEo-zQ-ldH" id="uhH-Bw-NEN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -250,7 +250,7 @@
                             <outlet property="delegate" destination="nQ3-Tu-RO7" id="0YH-ie-g0L"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All Classes" id="mHQ-td-VVa"/>
+                    <navigationItem key="navigationItem" title="All Courses" id="mHQ-td-VVa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KuR-Nb-kod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,5 +1,5 @@
 //
-//  AllClassesTableViewController.swift
+//  AllCoursesTableViewController.swift
 //  GB_iOS_UI_Course
 //
 //  Created by Alexander Lezin on 23/05/2019.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class AllClassesTableViewController: UITableViewController {
+class AllCoursesTableViewController: UITableViewController {
 
-    var classes = [
+    var courses = [
         "iOS",
         "Android",
         "Java",
@@ -34,23 +34,26 @@ class AllClassesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return courses.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-
+        // Getting a cell from the pool
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath) as! AllCoursesTableViewCell
+        // Getting certain course title
+        let course = courses[indexPath.row]
+        
+        // Устанавливаем город в надпись ячейки
+        cell.courseTitle.text = course
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
