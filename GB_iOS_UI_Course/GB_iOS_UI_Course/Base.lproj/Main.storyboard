@@ -176,7 +176,7 @@
             </objects>
             <point key="canvasLocation" x="4170" y="360"/>
         </scene>
-        <!--My Classes-->
+        <!--My Courses-->
         <scene sceneID="IKV-GV-hzm">
             <objects>
                 <tableViewController id="s33-2C-tDk" sceneMemberID="viewController">
@@ -199,7 +199,7 @@
                             <outlet property="delegate" destination="s33-2C-tDk" id="0xI-71-BfF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Classes" id="flC-Lg-qK9">
+                    <navigationItem key="navigationItem" title="My Courses" id="flC-Lg-qK9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4pT-Aa-wk3">
                             <connections>
                                 <segue destination="nQ3-Tu-RO7" kind="show" id="RXZ-YW-8HV"/>
@@ -211,22 +211,38 @@
             </objects>
             <point key="canvasLocation" x="3196" y="-394"/>
         </scene>
-        <!--All Classes-->
+        <!--All Courses-->
         <scene sceneID="2sX-7g-h33">
             <objects>
-                <tableViewController id="nQ3-Tu-RO7" sceneMemberID="viewController">
+                <tableViewController id="nQ3-Tu-RO7" customClass="AllCoursesTableViewController" customModule="GB_iOS_UI_Course" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6Md-DN-aLJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rxw-0G-oQc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" id="rxw-0G-oQc" customClass="AllCoursesTableViewCell" customModule="GB_iOS_UI_Course" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rxw-0G-oQc" id="wxH-ko-f2K">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEo-zQ-ldH">
+                                            <rect key="frame" x="40" y="11.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wEo-zQ-ldH" secondAttribute="trailing" constant="40" id="DFm-Az-SCP"/>
+                                        <constraint firstItem="wEo-zQ-ldH" firstAttribute="centerY" secondItem="wxH-ko-f2K" secondAttribute="centerY" id="R4M-PN-5Vr"/>
+                                        <constraint firstItem="wEo-zQ-ldH" firstAttribute="leading" secondItem="wxH-ko-f2K" secondAttribute="leading" constant="40" id="j0S-dj-uJJ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="courseTitle" destination="wEo-zQ-ldH" id="uhH-Bw-NEN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -234,7 +250,7 @@
                             <outlet property="delegate" destination="nQ3-Tu-RO7" id="0YH-ie-g0L"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All Classes" id="mHQ-td-VVa"/>
+                    <navigationItem key="navigationItem" title="All Courses" id="mHQ-td-VVa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KuR-Nb-kod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -284,6 +300,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9Zk-em-kto" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lcw-fL-A8e">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
