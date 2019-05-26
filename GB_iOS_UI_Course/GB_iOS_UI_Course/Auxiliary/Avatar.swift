@@ -9,6 +9,8 @@
 import UIKit
 
 class Avatar: UIImageView {
+    
+    
     //MARK: - globals
     let size: (height: CGFloat, width: CGFloat) = (70.0, 70.0)
     let cornerRadius: CGFloat = 35.0
@@ -20,12 +22,30 @@ class Avatar: UIImageView {
     @IBInspectable var shadowOffset: CGSize = CGSize(width: 5.0, height: 5.0)
     @IBInspectable var shadowRadius: CGFloat = 5.0
     
-    func createAvatar(_ image: String) {
+    func createAvatar(_ image: UIImage) {
         
-        let inmageContainer = UIView(frame: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
+        let imageContainer = UIView(frame: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
         
         if shadow {
-            
+            imageContainer.clipsToBounds = false
+            imageContainer.layer.shadowColor = shadowColor.cgColor
+            imageContainer.layer.shadowOpacity = shadowOpacity
+            imageContainer.layer.shadowOffset = shadowOffset
+            imageContainer.layer.shadowRadius = shadowRadius
+            imageContainer.layer.shadowPath = UIBezierPath(roundedRect: imageContainer.bounds, cornerRadius: cornerRadius).cgPath
         }
+        
+        let imageView = UIImageView(frame: imageContainer.bounds)
+        
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = cornerRadius
+        imageView.layer.borderColor = UIColor.black.cgColor
+        imageView.layer.borderWidth = 1.0
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFill
+        
+        self.addSubview(imageContainer)
+        imageContainer.addSubview(imageView)
+        
     }
 }

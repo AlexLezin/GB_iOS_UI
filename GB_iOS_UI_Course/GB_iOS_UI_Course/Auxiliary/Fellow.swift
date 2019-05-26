@@ -9,11 +9,12 @@
 import UIKit
 
 struct Fellow {
-    var name: String
-    var avatar: UIImage
+    var fellowName: String
+    var fellowAvatar: UIImage
+    
 }
 
-let steveJobs = Fellow(name: "Steeve Jobs", avatar: #imageLiteral(resourceName: "Image"))
-let johnIve = Fellow(name: "Johnathan Ive", avatar: #imageLiteral(resourceName: "Image-2"))
-let timCook = Fellow(name: "Tim Cook", avatar: #imageLiteral(resourceName: "Image-1"))
+let steveJobs = Fellow(fellowName: "Steeve Jobs", fellowAvatar: #imageLiteral(resourceName: "Image"))
+let johnIve = Fellow(fellowName: "Johnathan Ive", fellowAvatar: #imageLiteral(resourceName: "Image-2"))
+let timCook = Fellow(fellowName: "Tim Cook", fellowAvatar: #imageLiteral(resourceName: "Image-1"))
 

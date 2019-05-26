@@ -11,7 +11,7 @@ import UIKit
 class MyFellowsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var fellowLabel: UILabel!
-    @IBOutlet weak var fellowAvatar: UIImageView!
+    @IBOutlet weak var fellowAvatar: Avatar!
     
     override func awakeFromNib() {
         super.awakeFromNib()
