@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		763A22BE229B06B50039ACB7 /* Heart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A22BD229B06B50039ACB7 /* Heart.swift */; };
+		763A22C0229B172D0039ACB7 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A22BF229B172D0039ACB7 /* Avatar.swift */; };
 		76AA1FEC228B3D8E000086E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA1FEB228B3D8E000086E4 /* AppDelegate.swift */; };
 		76AA1FF1228B3D8E000086E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AA1FEF228B3D8E000086E4 /* Main.storyboard */; };
 		76AA1FF3228B3D90000086E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76AA1FF2228B3D90000086E4 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		763A22BD229B06B50039ACB7 /* Heart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heart.swift; sourceTree = "<group>"; };
+		763A22BF229B172D0039ACB7 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		76AA1FE8228B3D8E000086E4 /* GB_iOS_UI_Course.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GB_iOS_UI_Course.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AA1FEB228B3D8E000086E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76AA1FF0228B3D8E000086E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			children = (
 				76B57D8822973B37002D3662 /* Fellow.swift */,
 				76B57D8A22973BAF002D3662 /* Course.swift */,
+				763A22BD229B06B50039ACB7 /* Heart.swift */,
+				763A22BF229B172D0039ACB7 /* Avatar.swift */,
 			);
 			path = Auxiliary;
 			sourceTree = "<group>";
@@ -233,8 +239,10 @@
 				76B57D7522971AA7002D3662 /* AllCoursesTableViewCell.swift in Sources */,
 				76AA1FFE228BDD08000086E4 /* LoginViewController.swift in Sources */,
 				76B57D7722972AB6002D3662 /* MyCoursesTableViewController.swift in Sources */,
+				763A22C0229B172D0039ACB7 /* Avatar.swift in Sources */,
 				76B57D7322971A64002D3662 /* AllCoursesTableViewController.swift in Sources */,
 				76B57D87229736F4002D3662 /* BadgesCollectionViewCell.swift in Sources */,
+				763A22BE229B06B50039ACB7 /* Heart.swift in Sources */,
 				76B57D7922972AC6002D3662 /* MyCoursesTableViewCell.swift in Sources */,
 				76B57D8922973B37002D3662 /* Fellow.swift in Sources */,
 				76AA1FEC228B3D8E000086E4 /* AppDelegate.swift in Sources */,

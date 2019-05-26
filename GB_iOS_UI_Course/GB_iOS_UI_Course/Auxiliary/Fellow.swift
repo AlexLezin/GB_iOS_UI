@@ -16,3 +16,4 @@ struct Fellow {
 let steveJobs = Fellow(name: "Steeve Jobs", avatar: #imageLiteral(resourceName: "Image"))
 let johnIve = Fellow(name: "Johnathan Ive", avatar: #imageLiteral(resourceName: "Image-2"))
 let timCook = Fellow(name: "Tim Cook", avatar: #imageLiteral(resourceName: "Image-1"))
+
