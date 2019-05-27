@@ -10,6 +10,7 @@ import UIKit
 
 class MyFellowsTableViewController: UITableViewController {
 
+    let segueIdentifier = "ShowBadges"
     var fellows = [steveJobs, johnIve, timCook]
     
     override func viewDidLoad() {
@@ -20,6 +21,18 @@ class MyFellowsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            if let destination = segue.destination as? BadgesCollectionViewController {
+                if let cell = sender as? UITableViewCell,
+                    let indexPath = tableView.indexPath(for: cell) {
+                    let fellow = fellows[indexPath.row]
+                    destination.fellowBadges = fellow.fellowBadges
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source

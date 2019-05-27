@@ -157,7 +157,7 @@
                                 <connections>
                                     <outlet property="fellowAvatar" destination="9Bp-FP-OB3" id="uGG-gT-rc2"/>
                                     <outlet property="fellowLabel" destination="e7V-NM-4gz" id="SUL-53-E7E"/>
-                                    <segue destination="rnM-tV-CC8" kind="show" identifier="ShowPhotos" id="0sF-5d-Ds3"/>
+                                    <segue destination="rnM-tV-CC8" kind="show" identifier="ShowBadges" id="0sF-5d-Ds3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -172,7 +172,7 @@
             </objects>
             <point key="canvasLocation" x="3195.6521739130435" y="359.59821428571428"/>
         </scene>
-        <!--Photos-->
+        <!--Badges-->
         <scene sceneID="5Dw-nc-H77">
             <objects>
                 <collectionViewController id="rnM-tV-CC8" customClass="BadgesCollectionViewController" customModule="GB_iOS_UI_Course" customModuleProvider="target" sceneMemberID="viewController">
@@ -242,7 +242,7 @@
                             <outlet property="delegate" destination="rnM-tV-CC8" id="fwW-MC-IGN"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Photos" id="JqH-rd-ywC"/>
+                    <navigationItem key="navigationItem" title="Badges" id="JqH-rd-ywC"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nx2-Va-kng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
