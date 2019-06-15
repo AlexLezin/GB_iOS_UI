@@ -9,13 +9,44 @@
 import UIKit
 
 struct Fellow {
-    var fellowName: String
+    let fellowName: String
+    let fellowSurname: String
+    let fellowMiddleName: String?
+    var fellowFullName: String {
+        get {
+            let fullName: String
+            if fellowMiddleName != nil {
+                fullName = "\(fellowName) \(fellowMiddleName!) \(fellowSurname)"
+            } else {
+                fullName = "\(fellowName) \(fellowSurname)"
+            }
+            return fullName
+        }
+    }
     var fellowAvatar: UIImage
     var fellowBadges: [UIImage]
     
+    init(name: String, surname: String, middleName: String? = nil, avatar: UIImage, badges: [UIImage]) {
+        self.fellowName = name
+        self.fellowSurname = surname
+        self.fellowMiddleName = middleName
+        self.fellowAvatar = avatar
+        self.fellowBadges = badges
+    }
+    
 }
 
-let steveJobs = Fellow(fellowName: "Steeve Jobs", fellowAvatar: #imageLiteral(resourceName: "Image"), fellowBadges: [#imageLiteral(resourceName: "Swift"), #imageLiteral(resourceName: "Python"), #imageLiteral(resourceName: "Kotlin")])
-let johnIve = Fellow(fellowName: "Johnathan Ive", fellowAvatar: #imageLiteral(resourceName: "Image-2"), fellowBadges: [#imageLiteral(resourceName: "Swift"), #imageLiteral(resourceName: "Python"), #imageLiteral(resourceName: "Android")])
-let timCook = Fellow(fellowName: "Tim Cook", fellowAvatar: #imageLiteral(resourceName: "Image-3"), fellowBadges: [#imageLiteral(resourceName: "Swift"), #imageLiteral(resourceName: "Java"), #imageLiteral(resourceName: "PHP")])
+let steveJobs = Fellow(name: "Steven",
+                       surname: "Jobs",
+                       middleName: "Paul",
+                       avatar: #imageLiteral(resourceName: "Image"),
+                       badges: [#imageLiteral(resourceName: "Swift"), #imageLiteral(resourceName: "Python"), #imageLiteral(resourceName: "Kotlin")])
+let johnIve = Fellow(name: "Johnathan",
+                     surname: "Ive",
+                     avatar: #imageLiteral(resourceName: "Image-2"),
+                     badges: [#imageLiteral(resourceName: "Swift"), #imageLiteral(resourceName: "Python"), #imageLiteral(resourceName: "Android")])
+let timCook = Fellow(name: "Tim",
+                     surname: "Cook",
+                     avatar: #imageLiteral(resourceName: "Image-3"),
+                     badges: [#imageLiteral(resourceName: "Swift"), #imageLiteral(resourceName: "Java"), #imageLiteral(resourceName: "PHP")])
 

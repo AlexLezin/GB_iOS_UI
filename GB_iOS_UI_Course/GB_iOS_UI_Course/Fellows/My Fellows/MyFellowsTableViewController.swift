@@ -55,7 +55,7 @@ class MyFellowsTableViewController: UITableViewController {
         let fellow = fellows[indexPath.row]
         
         // Set course into cell lable
-        cell.fellowLabel.text = fellow.fellowName
+        cell.fellowLabel.text = fellow.fellowFullName
         cell.fellowAvatar.createAvatar(fellow.fellowAvatar)
 
         return cell
