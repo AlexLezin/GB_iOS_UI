@@ -8,7 +8,11 @@
 
 import UIKit
 
-struct Fellow {
+struct Fellow: Comparable {
+    static func < (lhs: Fellow, rhs: Fellow) -> Bool {
+        <#code#>
+    }
+    
     let fellowName: String
     let fellowSurname: String
     let fellowMiddleName: String?
@@ -23,6 +27,14 @@ struct Fellow {
             return fullName
         }
     }
+    
+    var fellowChar: String {
+        get {
+            let char = fellowSurname.prefix(1)
+            return String(char)
+        }
+    }
+    
     var fellowAvatar: UIImage
     var fellowBadges: [UIImage]
     
@@ -48,5 +60,8 @@ let johnIve = Fellow(name: "Johnathan",
 let timCook = Fellow(name: "Tim",
                      surname: "Cook",
                      avatar: #imageLiteral(resourceName: "Image-3"),
-                     badges: [#imageLiteral(resourceName: "Swift"), #imageLiteral(resourceName: "Java"), #imageLiteral(resourceName: "PHP")])
-
+                     badges: [#imageLiteral(resourceName: "Swift"), #imageLiteral(resourceName: "Java"), #imageLiteral(resourceName: "PHP"), #imageLiteral(resourceName: "Kotlin")])
+let vanJacobson = Fellow(name: "Van",
+                         surname: "Jacobson",
+                         avatar: #imageLiteral(resourceName: "Image-4"),
+                         badges: [#imageLiteral(resourceName: "Python"), #imageLiteral(resourceName: "Swift")])

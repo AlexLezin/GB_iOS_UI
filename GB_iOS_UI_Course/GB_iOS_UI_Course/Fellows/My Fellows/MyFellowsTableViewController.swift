@@ -11,7 +11,36 @@ import UIKit
 class MyFellowsTableViewController: UITableViewController {
 
     let segueIdentifier = "ShowBadges"
-    var fellows = [steveJobs, johnIve, timCook]
+   var fellows = [steveJobs, johnIve, timCook, vanJacobson]
+    
+    private var fellowsDic = [String: [Fellow]]()
+    var fellowsChars: [String] {
+        get {
+            var chars = [String]()
+            for fellow in self.fellows {
+                if !chars.contains(fellow.fellowChar) {
+                    chars.append(fellow.fellowChar)
+                }
+            }
+            return chars.sorted()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fellows = fellows.sorted()
+        
+        // Appending fellows into dictionary
+        for fellow in fellows {
+            if var value = fellowsDic[fellow.fellowChar] {
+                value.append(fellow)
+                fellowsDic[fellow.fellowChar] = value
+            } else {
+                fellowsDic[fellow.fellowChar] = [fellow]
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +68,21 @@ class MyFellowsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return fellowsDic.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return fellows.count
+        
+        let key = self.fellowsChars[section]
+        guard let numberOfRows = fellowsDic[key]?.count else {
+            return 0
+        }
+        return numberOfRows
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.fellowsChars[section]
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,11 +90,12 @@ class MyFellowsTableViewController: UITableViewController {
         // Getting a cell from the pool
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFellowsCell", for: indexPath) as! MyFellowsTableViewCell
         // Getting certain fellow name
-        let fellow = fellows[indexPath.row]
+        let key = self.fellowsChars[indexPath.section]
+        guard let fellow = fellowsDic[key] else { return cell }
         
         // Set course into cell lable
-        cell.fellowLabel.text = fellow.fellowFullName
-        cell.fellowAvatar.createAvatar(fellow.fellowAvatar)
+        cell.fellowLabel.text = fellow[indexPath.row].fellowFullName
+        cell.fellowAvatar.createAvatar(fellow[indexPath.row].fellowAvatar)
 
         return cell
     }
